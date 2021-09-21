@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+
+  <title>Login</title>
+  
+  <meta charset="utf-8">
+  
+  <!-- Bootstrap CSS/JS e Angular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  
+</head>
+
+<body ng-app="MyApp">
+
+<nav class="navbar navbar-inverse">
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     <img id="logo" src="immagini/logo.png"/>
+    </div>
+	
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="home.html">Home</a></li>
+        <li><a href="Orientamento.html">Orientamento</a></li>
+        <li><a href="doveStudiare.html">Dove Studiare</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+  
+</nav>
+  
+<div class="container-fluid text-center">    
+  
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+	<!-- Servizio Interval per orario -->
+	   <div ng-controller="tempo">
+	   <p> L'orario di oggi: <br> {{orario}}</p>
+	   </div> 
+	   
+	   <br><br> 
+	   <p> Link esterni: </p>
+      <p><a href="https://www.ict.unito.it/index.php/news/avvisi/orario-ict-2020-21">Orario ICT 2020/21</a></p>
+      <p><a href="https://www.didattica-cps.unito.it/do/home.pl/View?doc=orario_lezioni.html">Insegnamenti e Orari</a></p>
+      <p><a href="https://www.ict.unito.it/index.php/news">News e Avvisi</a></p>
+    </div>
+	
+    <div class="col-sm-9 text-left"> 
+	  <img class="flex" src="immagini/campus.jpg"/>
+      <h1 class="a"> REGISTRATI O ACCEDI</h1> <br>
+	  
+	  <p class="a"> Inserisci i tuoi dati per <strong> registrarti </strong> e creare il tuo profilo personale. <br> *obbligatorio.</p> <br>
+	  
+	  <!-- ng-app e ng-controller per validazione form di registrazione -->
+	  <form id="registra" name="registra" ng-controller="ValidaRegistra" novalidate>
+	  <label for="txt1"> *Nome: </label> <br>
+	  <input type="text" name="name" id="name" ng-model="name" required> 
+	   <span style="color:red" ng-show="registra.name.$dirty && registra.name.$invalid">
+		 <span ng-show="registra.name.$error.required"> Campo obbligatorio </span>
+		 </span> <br>
+	  
+	  <label for="txt2"> *Cognome: </label> <br>
+	  <input type="text" name="cogn" id="cogn" ng-model="cogn" required>
+	      <span style="color:red" ng-show="registra.cogn.$dirty && registra.cogn.$invalid">
+		  <span ng-show="registra.cogn.$error.required"> Campo obbligatorio </span>
+		 </span><br>
+	  
+	  <label for="txt3"> *Email: </label> <br>
+	  <input type="email" name="email" id="email" ng-model="email" required> 
+	     <span style="color:red" ng-show="registra.email.$dirty && registra.email.$invalid">
+		 <span ng-show="registra.email.$error.required"> Campo obbligatorio </span> 
+		 <span ng-show="registra.email.$error.email"> Email non valida </span> 
+		 </span> <br> 
+		 
+	  <label for="txt4"> *Password: </label> <br>
+	  <input type="password" name="pwd" id="pwd" ng-model="pwd" required> 
+	      <span style="color:red" ng-show="registra.pwd.$dirty && registra.pwd.$invalid">
+		  <span ng-show="registra.pwd.$error.required"> Campo obbligatorio </span>
+		 </span><br><br>
+	  
+	  <input type="button" value="Registrati" name="submit">
+	  </form> <br><br>
+	  
+	  <p class="a"> <strong> Accedi </strong> alla tua pagina con le tue credenziali. </p> <br>
+	 
+	  <form id="accedi">
+	  <label for="txt5"> Email: </label> <br>
+	  <input type="text" name="email" id="em1"> <br>
+	  <label for="txt6"> Password: </label> <br>
+	  <input type="password" name="pwd" id="pwd1"> <br><br>
+	  <input type="button" value="Accedi" name="submit"> <br><br><br>
+	  </form> 
+	  
+    </div>
+	
+    
+	
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+
+  <div id="footer-sx">
+    <ul>
+        <li><a href="LOGINECONTATTI.html">Contatti</a></li>
+        <li>|</li>
+        <li><a href="sito.html">Chi siamo?</a></li>
+        <li>|</li>
+        <li><a href="FAQ.html">FAQ</a></li>
+	</ul>
+  </div>
+</footer>
+
+<script src="js-angular.js" type="text/javascript"> </script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+
+  <title>Orientamento</title>
+  
+  <meta charset="utf-8">
+  
+  <!-- Bootstrap CSS/JS e Angular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  
+</head>
+
+<body ng-app="myApp1">
+
+<nav class="navbar navbar-inverse">
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     <img id="logo" src="immagini/logo.png"/>
+    </div>
+	
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="home.html">Home</a></li>
+        <li><a href="Orientamento.html">Orientamento</a></li>
+        <li><a href="doveStudiare.html">Dove Studiare</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+  
+</nav>
+  
+<div class="container-fluid text-center">    
+  
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+	<!-- Servizio Interval per orario -->
+	   <div ng-controller="tempo">
+	   <p> L'orario di oggi: <br> {{orario}}</p>
+	   </div> 
+	   
+	   <br><br> 
+	   <p> Link esterni: </p>
+      <p><a href="https://www.ict.unito.it/index.php/news/avvisi/orario-ict-2020-21">Orario ICT 2020/21</a></p>
+      <p><a href="https://www.didattica-cps.unito.it/do/home.pl/View?doc=orario_lezioni.html">Insegnamenti e Orari</a></p>
+      <p><a href="https://www.ict.unito.it/index.php/news">News e Avvisi</a></p>
+    </div>
+	
+    <div class="col-sm-9 text-left"> 
+	  <img class="flex" src="immagini/campus.jpg"/>
+      <h1 class="a"> Il corso</h1><br/>
+            <p> L’Italia attualmente ha un ruolo molto importante nell’ambito dell’istruzione superiore europea. Nel presente, così come nel passato, può far forza su una forte struttura che permette di offrire agli studenti un’ottima formazione.
+             Studiare in Italia dà anche la possibilità di venire a contatto con l’immensa cultura di questo paese. <br/><br/>  
+			 ICT UNITO  è un utile e pratico strumento di informazione per gli studenti che desiderano frequentare in Italia un corso universitario all'avanguardia.
+             <br><br>
+             Ti starai sicuramente domandando perché scegliere la nostra università, giusto? </p>
+             <br>
+		
+		<!-- al click sul bottone mostra la lista -->	 
+		<div ng-controller="myCtrl">
+        <button ng-click="MyChoice()"> <strong> Dieci </strong> buone ragioni per sceglierla: </button>
+             <br><br>
+		<div ng-show="showMe">	 
+        <ol>
+        <li> E' una grande università;</li> <br> 
+        <li>  E' un ateneo prestigioso;</li><br> 
+        <li>  Ha un'ampia <a href="COSASTUDIARE.html"> offerta formativa </a>;</li> <br> 
+        <li> Garantisce il <a href="http://www.edisu.piemonte.it/"> diritto allo studio </a> ;</li> <br> 
+        <li> Investe nella ricerca e crea innovazione;</li> <br> 
+        <li> Offre un ambiente internazionale;</li> <br> 
+        <li> Prepara le basi per il tuo lavoro futuro;</li><br>  
+        <li> Ti accompagna nel tuo <a href="COSASTUDIARE.html"> percorso di studi </a> ;</li><br>  
+        <li> Ti fa vivere in una <a href="DOVESTUDIARE.html"> città universitaria </a>;</li> <br> 
+        <li>Valorizza il territorio. </li>
+        </ol> <br>
+		</div>
+		</div>
+		<hr align="center" size="1" color="black">
+		<!-- servizio $location genera URL pagina -->
+		<div ng-controller="service">
+		<p> <strong> Condividi </strong> con gli amici questo link e fagli scoprire questo nuovo corso! </p>
+		<p> {{myUrl}} </p>
+		</div>
+		<br>
+    </div>
+	
+    
+	
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+
+  <div id="footer-sx">
+    <ul>
+        <li><a href="LOGINECONTATTI.html">Contatti</a></li>
+        <li>|</li>
+        <li><a href="sito.html">Chi siamo?</a></li>
+        <li>|</li>
+        <li><a href="FAQ.html">FAQ</a></li>
+	</ul>
+  </div>
+</footer>
+
+<script src="js-angular.js" type="text/javascript"> </script>
+
+</body>
+</html>
